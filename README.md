@@ -47,7 +47,7 @@ The data for this project is pulled from the [Offical Clash Royale API](https://
 	```
 	Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season); default is set to 2025-02 season in script.
 
-4. In .ipynb script, update code chunk # 6, line 1 to match the time frame of match data analyzed to current season:
+4. Additionally, update code chunk # 6, line 1 to match the time frame of match data analyzed to current season:
 	```
 	current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format', 'last day of current season in yyyy-mm-dd H:M format']) 
 	```
