@@ -29,11 +29,11 @@ The final product and insights of this project are showcased in the following:
 
 ## Data Source
 
-The data for this project is pulled from the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started), which provides near realtime game data across all players and game modes. Note that an API key is required to access the data (see below).
+The data for this project is pulled from the [Official Clash Royale API](https://developer.clashroyale.com/#/getting-started), which provides near realtime game data across all players and game modes. Note that an API key is required to access the data (see below).
 
 ## How to Use
 
-1. Visit the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key.
+1. Visit the [Official Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key.
 
 2. Create a config.py file and in it write and save:
 	```
