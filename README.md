@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project pulls game data from the global hit strategy game [Clash Royale](https://en.wikipedia.org/wiki/Clash_Royale) via its official API and aims to provide recent match performance and strategic meta insights for the top 100 Path of Legend game mode players (ranked by season 2/25 final results). The work utilizes Python to make the API requests and perform EDA and Tableau for reporting. While mostly a fun passion project, it is a viable way to track ones favorite elite players, what cards they're using / winning with / losing to, etc.
+This project pulls game data from the global hit strategy game, [Clash Royale](https://en.wikipedia.org/wiki/Clash_Royale), via its official API and aims to provide recent match performance and strategic meta insights for the top 100 Path of Legend game mode players (ranked by season 2/25 final results). The work utilizes Python to make the API requests and perform EDA and Tableau for reporting. While mostly a fun passion project, it is a viable way to track ones favorite elite players, what cards they're using / winning with / losing to, etc.
 
 ## Key Outputs
 
@@ -20,7 +20,7 @@ The final product and insights of this project are showcased in the following:
 
 ## Prerequisites
 
-- Python with the following libraries
+- Python with the following libraries:
 	- pandas
 	- config
 	- requests
@@ -29,34 +29,36 @@ The final product and insights of this project are showcased in the following:
 
 ## Data Source
 
-The data for this project is pulled from the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) which provides near realtime game data across all players. 
+The data for this project is pulled from the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started), which provides near realtime game data across all players and game modes. Note that an API key is required to access the data (see below).
 
 ## How to Use
 
-1. Visit [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key
+1. Visit the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key
 
 2. Create a config.py file and in it write and save:
-```API_KEY = 'put given api key here'
+```
+API_KEY = 'put given api key here'
 ```
 3. Download the [Exploring Clash Royale Data.ipynb](https://github.com/Yishak-Ali/Clash-Royale-API-Data-Analysis/blob/main/Exploring%20Clash%20Royale%20Data.ipynb) script and upload to your local Jupyter Notebook environment.
 
-3. In the .ipynb script, modify code chunk # 4 line 1 to select which season's top 100 players to examine during the current running season (optional):
+3. In the .ipynb script, modify code chunk # 4, line 1 to select which season's top 100 players to examine during the current running season (optional):
 ```
 season = 'replace with relevant season in yyyy-mm format'
 ```
-	- Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season), default is set to 2025-02 season in script
+Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season), default is set to 2025-02 season in script.
 
-4. In .ipynb script, update code chunk # 6 line 1 to match the time frame of match data analyzed to current season:
+4. In .ipynb script, update code chunk # 6, line 1 to match the time frame of match data analyzed to current season:
 ```
-current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format', 'last day of current season in yyyy-mm-dd H:M format']) 
+current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format',
+							'last day of current season in yyyy-mm-dd H:M format']) 
 ```
-	- Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section.
+Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section, currently set to filter between 2025-03-03 10:00 and 2025-04-07 10:00, the range of season 3/2025.
 
-5. Uncomment all 3 lines of the last code chunk in the script, under the 'Table export' section, to ensure data tables export as excel files.
+5. Uncomment all 3 lines of the last code chunk in the script, under the 'Table export' section, to ensure data tables export as Excel files.
 
 6. Run the .ipynb script.
 
-7. To set up in Tableau, connect the 3 resulting excels in Tableau; note that self joins of team_deck_df and opponent_deck_df on Battle Time = Battle Time and Card Name <> Card Name are required to replicate the dashboards exactly (mainly sankey chart).
+7. To set up in Tableau, import and connect the 3 resulting Excel files in Tableau; note that self joins of team_deck_df and opponent_deck_df tables on Battle Time = Battle Time and Card Name <> Card Name are required to replicate the dashboards exactly (mainly sankey chart).
 
 ## Limitations & Future Work
 
