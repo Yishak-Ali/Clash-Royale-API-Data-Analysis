@@ -10,11 +10,11 @@ The final product and insights of this project are showcased in the following:
 
 [Clash Royale Interactive Tableau Dashboard](https://public.tableau.com/views/ClashRoyaleDashboard/BattleLogDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-**Dashboard Preview 1:** Recent Battle Log - focuses on recent match performance for selected player
+**Dashboard Preview 1:** Recent Battle Log - focuses on recent match performance for selected player.
 
 <img src="visualizations/01. battle_log_dashboard.png" alt="battle_log_dashboard" width="1000"/>
 
-**Dashboard Preview 2:** Meta Analysis - highlights card usage and performance across top players and their opponents
+**Dashboard Preview 2:** Meta Analysis - highlights card usage and performance across top players and their opponents.
 
 <img src="visualizations/02. meta_analysis_dashboard.png" alt="meta_analysis_dashboard" width="1000"/>
 
@@ -33,26 +33,26 @@ The data for this project is pulled from the [Offical Clash Royale API](https://
 
 ## How to Use
 
-1. Visit the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key
+1. Visit the [Offical Clash Royale API](https://developer.clashroyale.com/#/getting-started) to create a developer account and receive an API key.
 
 2. Create a config.py file and in it write and save:
-```
-API_KEY = 'put given api key here'
-```
+	```
+	API_KEY = 'put given api key here'
+	```
 3. Download the [Exploring Clash Royale Data.ipynb](https://github.com/Yishak-Ali/Clash-Royale-API-Data-Analysis/blob/main/Exploring%20Clash%20Royale%20Data.ipynb) script and upload to your local Jupyter Notebook environment.
 
 3. In the .ipynb script, modify code chunk # 4, line 1 to select which season's top 100 players to examine during the current running season (optional):
-```
-season = 'replace with relevant season in yyyy-mm format'
-```
-Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season), default is set to 2025-02 season in script.
+	```
+	season = 'replace with relevant season in yyyy-mm format'
+	```
+	Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season), default is set to 2025-02 season in script.
 
 4. In .ipynb script, update code chunk # 6, line 1 to match the time frame of match data analyzed to current season:
-```
-current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format',
-							'last day of current season in yyyy-mm-dd H:M format']) 
-```
-Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section, currently set to filter between 2025-03-03 10:00 and 2025-04-07 10:00, the range of season 3/2025.
+	```
+	current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format',
+								'last day of current season in yyyy-mm-dd H:M format']) 
+	```
+	Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section, currently set to filter between 2025-03-03 10:00 and 2025-04-07 10:00, the range of season 3/2025.
 
 5. Uncomment all 3 lines of the last code chunk in the script, under the 'Table export' section, to ensure data tables export as Excel files.
 
