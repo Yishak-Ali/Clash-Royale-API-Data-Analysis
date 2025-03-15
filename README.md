@@ -45,14 +45,13 @@ The data for this project is pulled from the [Offical Clash Royale API](https://
 	```
 	season = 'replace with relevant season in yyyy-mm format'
 	```
-	Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season), default is set to 2025-02 season in script.
+	Note: the API only provides seasonal global Path of Legend rankings up to the previous season (not current running season); default is set to 2025-02 season in script.
 
 4. In .ipynb script, update code chunk # 6, line 1 to match the time frame of match data analyzed to current season:
 	```
-	current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format',
-								'last day of current season in yyyy-mm-dd H:M format']) 
+	current_season = pd.Series(['first day of current season in yyyy-mm-dd H:M format', 'last day of current season in yyyy-mm-dd H:M format']) 
 	```
-	Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section, currently set to filter between 2025-03-03 10:00 and 2025-04-07 10:00, the range of season 3/2025.
+	Note: to get the first and last days, search for the range of the current season on Google and use 10:00 for the H:M section; currently set to filter between 2025-03-03 10:00 and 2025-04-07 10:00, the range of season 3/25.
 
 5. Uncomment all 3 lines of the last code chunk in the script, under the 'Table export' section, to ensure data tables export as Excel files.
 
